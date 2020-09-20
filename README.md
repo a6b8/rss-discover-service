@@ -1,5 +1,7 @@
 # curlai--discover-service
 
+## request
+https://localhost/discover/youtube/watch/:id?secret=n
 
 ## response
 
