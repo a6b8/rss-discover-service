@@ -18,23 +18,26 @@ def set_secrets()
     obj = {}
 
     for i in 0 ... ARGV.length
+        puts ARGV[ i ].to_s
         key = ARGV[ i ].split( "=" )[ 0 ]
         value = ARGV[ i ].split( "=" )[ 1 ].gsub( '"','' )
 
         if key.include? "_FILE"
-            value = File.open( "" + value, "r" ) do | f |
-                f.each_line { | line | }
-            end
+            value = File.read( value )
             key = key[ 0, key.length - 5 ]
         end
 
         case key
-        when "DEBUG"
-            obj[:debug] = JSON.parse( value )
-        when "MULTIPLICATOR"
-            obj[:multiplicator] = value.to_i
-        else
+            when "DEBUG"
+                puts value
+                obj[:debug] = JSON.parse( value )
+            when "MULTIPLICATOR"
+                puts value
+                obj[:multiplicator] = value.to_i
+            else
         end
+        puts obj
+        puts '----'
     end
     return obj
 end
@@ -63,13 +66,14 @@ set :port, '80'
 secrets = set_secrets()
 
 get '/discover/youtube/watch/:id' do
-    access = access_check( secrets[:multiplicator], params[ 'access' ], secrets[:debug] )
+    access = access_check( secrets[:multiplicator], params[ 'secret' ], secrets[:debug] )
+
     if access
         video = youtube_video_to_channel( params[ 'id' ], secrets[:debug] )
         content_type :json
         video.to_json
     else
-        "Access Denied! #{params[ 'access' ]}"
+        "Access Denied! #{params[ 'secret' ]}"
     end
 end
 
