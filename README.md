@@ -3,7 +3,7 @@
 
 ## response
 
-<code>
+```json
 {
     "video": {
         "id": "VIDEO_ID",
@@ -14,4 +14,4 @@
         "name": "CHANNEL_NAME"
     }
 }
-</code>
+```
