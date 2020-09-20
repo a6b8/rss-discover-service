@@ -1,2 +1,3 @@
 .env
 docker.txt
+docker-compose-secrets.yml
