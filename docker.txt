@@ -1,2 +1,0 @@
-docker tag curlai-discover:0.2 <Your Docker ID>/curlai-discover:0.2
-docker push <Your Docker ID>/curlai-discover:0.2
