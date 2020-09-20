@@ -11,7 +11,7 @@ require 'bundler'
 Bundler.require
 
 require 'net/http'
-require './helper/youtube/watch.rb'
+require './discover/youtube/watch.rb'
 
 
 def set_secrets()
