@@ -1,11 +1,3 @@
-# require 'sinatra'
-# require 'net/http'
-# require 'nokogiri'
-# require 'active_support/core_ext/hash/indifferent_access'
-# require 'json'
-# require './helpers/youtube/watch.rb'
-#require 'active_support/core_ext/hash/indifferent_access'
-
 require 'rubygems'
 require 'bundler'
 Bundler.require
@@ -13,12 +5,10 @@ Bundler.require
 require 'net/http'
 require './discover/youtube/watch.rb'
 
-
 def set_secrets()
     obj = {}
 
     for i in 0 ... ARGV.length
-        puts ARGV[ i ].to_s
         key = ARGV[ i ].split( "=" )[ 0 ]
         value = ARGV[ i ].split( "=" )[ 1 ].gsub( '"','' )
 
@@ -29,15 +19,11 @@ def set_secrets()
 
         case key
             when "DEBUG"
-                puts value
                 obj[:debug] = JSON.parse( value )
             when "MULTIPLICATOR"
-                puts value
                 obj[:multiplicator] = value.to_i
             else
         end
-        puts obj
-        puts '----'
     end
     return obj
 end
@@ -49,6 +35,7 @@ def access_check( multiplicator, answer, debug )
     d = Time.now.day.to_i
 
     sum = ( ( y - m + d ) * multiplicator.to_i ).floor
+
     debug ? puts( 'multiplicator: ' + multiplicator.to_s ) : ''
     debug ? puts( 'sum: ' + sum.to_s ) : ''
     debug ? puts( 'answer: ' + answer.to_s ) : ''
@@ -67,7 +54,6 @@ secrets = set_secrets()
 
 get '/discover/youtube/watch/:id' do
     access = access_check( secrets[:multiplicator], params[ 'secret' ], secrets[:debug] )
-
     if access
         video = youtube_video_to_channel( params[ 'id' ], secrets[:debug] )
         content_type :json
@@ -76,5 +62,3 @@ get '/discover/youtube/watch/:id' do
         "Access Denied! #{params[ 'secret' ]}"
     end
 end
-
-
