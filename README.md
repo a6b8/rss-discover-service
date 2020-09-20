@@ -3,6 +3,7 @@
 
 ## response
 
+<code>
 {
     "video": {
         "id": "VIDEO_ID",
@@ -13,3 +14,4 @@
         "name": "CHANNEL_NAME"
     }
 }
+</code>
