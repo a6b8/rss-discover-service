@@ -1,2 +1,0 @@
-docker tag bulletinboard:1.0 <Your Docker ID>/bulletinboard:1.0
-docker push <Your Docker ID>/bulletinboard:1.0
