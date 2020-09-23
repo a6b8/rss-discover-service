@@ -1,10 +1,17 @@
 # curlai--discover-service
 
-## variables
+## docker-compose
 
 ```yml
-
-}
+version: "3.1"
+services:
+  curlai-discover:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      DEBUG : ${DEBUG}
+      MULTIPLICATOR : ${MULTIPLICATOR}
 ```
 
 
