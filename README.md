@@ -1,12 +1,5 @@
 # curlai--discover-service
 
-## Table of Contents
-- [local](#local)
-  * [docker-compose](#docker-compose)
-  * [request](#request)
-- [response](#response)
-
-## local
 ### docker-compose
 
 ```yml
