@@ -1,5 +1,13 @@
 # curlai--discover-service
 
+## variables
+
+```yml
+
+}
+```
+
+
 ## request
 http://localhost/discover/youtube/watch/:id?secret=n
 
