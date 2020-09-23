@@ -1,6 +1,7 @@
 # curlai--discover-service
 
-## docker-compose
+## local
+### docker-compose
 
 ```yml
 version: "3.1"
@@ -14,8 +15,7 @@ services:
       MULTIPLICATOR : ${MULTIPLICATOR}
 ```
 
-
-## request
+### request
 http://localhost/discover/youtube/watch/:id?secret=n
 
 ## response
