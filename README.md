@@ -1,13 +1,10 @@
 # curlai--discover-service
 
-- [curlai--discover-service](#curlai--discover-service)
-  * [local](#local)
-    + [docker-compose](#docker-compose)
-    + [request](#request)
-  * [response](#response)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
+## Table of Contents
+- [local](#local)
+  * [docker-compose](#docker-compose)
+  * [request](#request)
+- [response](#response)
 
 ## local
 ### docker-compose
