@@ -16,10 +16,10 @@ class Discover < Sinatra::Base
     set :views, './templates'
 
     secrets = set_secrets()
-    get '/discover/yt/watch/:id' do
+    get '/discover/yt/watch/:video_id' do
         access = access_check( secrets[:multiplicator], params[ 'secret' ], secrets[:debug] )
         if access
-            video = yt_video_to_channel( params[ 'id' ], secrets[:debug] )
+            video = yt_video_to_channel( params[ 'video_id' ], secrets[:debug] )
             content_type :json
             video.to_json
         else
