@@ -52,13 +52,13 @@ class Discover < Sinatra::Base
     set :bind, '0.0.0.0'
     set :port, '80'
 
-    secrets = set_secrets()
+    secrets = Discover.set_secrets()
     secrets = {
         debug: true
     }
 
     get '/discover/youtube/watch/:id' do
-        access = access_check( secrets[:multiplicator], params[ 'secret' ], secrets[:debug] )
+        access = Discover.access_check( secrets[:multiplicator], params[ 'secret' ], secrets[:debug] )
         if access
             video = youtube_video_to_channel( params[ 'id' ], secrets[:debug] )
             content_type :json
