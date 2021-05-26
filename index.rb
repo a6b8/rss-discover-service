@@ -8,7 +8,7 @@ require 'active_support/core_ext/hash/indifferent_access'
 
 require './discover/youtube/watch.rb'
 require './discover/access/access.rb'
-#
+
 
 class Discover < Sinatra::Base
     set :bind, '0.0.0.0'
