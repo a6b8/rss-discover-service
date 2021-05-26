@@ -1,4 +1,4 @@
-def youtube_video_to_channel( video_id, debug )
+def yt_video_to_channel( video_id, debug )
   def download_html( url, debug )
     uri = URI( url )
     res = Net::HTTP.get( uri ) 
@@ -97,7 +97,7 @@ def youtube_video_to_channel( video_id, debug )
   debug ? print( 'D' ) : ''
 
   if !item[:channel][:id].nil?
-    puts feed = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + item[:channel][:id]
+    puts feed = 'https://www.yt.com/feeds/videos.xml?channel_id=' + item[:channel][:id]
     xml = download_xml( feed, debug )
     debug ? print( 'E' ) : ''
     item[:channel][:name] = xml.at( 'feed' ).css( 'title' )[ 0 ].text
