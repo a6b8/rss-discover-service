@@ -65,5 +65,3 @@ class Discover < Sinatra::Base
         end
     end
 end
-
-run HelloRack.new
