@@ -8,14 +8,14 @@
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a><br>
 
-1. Setup Environment Variables<br>
+2. Setup Environment Variables<br>
   ```MULTIPLICATOR : [Int]```<br>
   ```DEBUG : [boolean]```<br>
 
-2. Execute command in terminal: ```ruby test.rb```<br>
-   [x] Set Server<br>
-   [x] Set Video Id<br>
-   [x] Set Multiplicator<br>
+3. Execute command in terminal: ```ruby test.rb```
+   - [x] Set Server<br>
+   - [x] Set Video Id<br>
+   - [x] Set Multiplicator<br>
 
 ## Routes
 | Nr | Type | Route | Expect | Return |
