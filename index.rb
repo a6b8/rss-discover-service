@@ -53,7 +53,7 @@ class Discover < Sinatra::Base
     set :bind, '0.0.0.0'
     set :port, '80'
 
-    #secrets = set_secrets()
+    # secrets = set_secrets()
     secrets = {
         debug: true
     }
