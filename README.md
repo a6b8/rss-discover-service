@@ -18,12 +18,11 @@
    - [x] Set Multiplicator<br>
 
 ## Routes
-| Nr | Type | Route | Parameter | Structure | Return |
-| --- | --- | --- |  --- | --- | --- | 
-| 1 | yt | /discover/yt/watch | Video ID (String), Access Token (Int) | https://api.example.com/discover/yt/watch/[Video_ID]?access=[Access] | Channel ID, Channel Name, RSS Feed | 
+| Nr | Type | Route | Parameter | Return |
+| --- | --- | --- |  --- | --- | 
+| 1 | yt | /discover/yt/watch/```channel_id```?access=```access``` | Video ID (String), Access Token (Int) | Channel ID, Channel Name, RSS Feed | 
 
 ## Response
-
 1. yt
 ```json
 {
