@@ -9,7 +9,7 @@ require 'active_support/core_ext/hash/indifferent_access'
 require './discover/youtube/watch.rb'
 
 class Discover < Sinatra::Base
-    def set_secrets()
+    def self.set_secrets()
         result = {}
 
         keys = [
@@ -31,7 +31,7 @@ class Discover < Sinatra::Base
     end
 
 
-    def access_check( multiplicator, answer, debug )
+    def self.access_check( multiplicator, answer, debug )
         y = Time.now.year.to_i
         m = Time.now.month.to_i
         d = Time.now.day.to_i
