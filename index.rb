@@ -54,7 +54,7 @@ class Discover < Sinatra::Base
 
     #secrets = set_secrets()
     secrets = {
-        debug: false
+        debug: true
     }
 
     get '/discover/youtube/watch/:id' do
