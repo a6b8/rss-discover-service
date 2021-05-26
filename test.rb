@@ -13,7 +13,6 @@ hash = {
     }
 }
 
-
 puts 
 puts 'DISCOVER TEST - Video'
 puts '----------------------------'
@@ -60,7 +59,6 @@ url = ''
 url << hash[:server][:used]
 url << '/'
 url << hash[:server][:route]
-url << '/'
 url << hash[:video_id][:used]
 url << '?access='
 url << access.to_s
@@ -68,17 +66,20 @@ url << access.to_s
 uri = URI.parse( url )
 http = Net::HTTP.new( uri.host, uri.port )
 http.use_ssl = true
-
-request = Net::HTTP::Get.new(uri.request_uri)
-res = http.request(request)
+request = Net::HTTP::Get.new( uri.request_uri )
+res = http.request( request )
 
 puts ''
 puts 'URL: ' + url
+puts ''
+puts 'RESPONSE:'
+puts '---------'
 if res.code.to_s.eql? '200'
     puts 'OK'
-    puts JSON.pretty_generate( res.body.to_s )
+    print res.body.to_s
 else
     puts 'Error'
     puts res.code.to_s
 end
+puts
 exit
