@@ -20,7 +20,7 @@
 ## Routes
 | Nr | Type | Route | Parameter | Return |
 | --- | --- | --- |  --- | --- | 
-| 1 | yt | /discover/yt/watch/```channel_id```?access=```access``` | Video ID (String), Access Token (Int) | Channel ID, Channel Name, RSS Feed | 
+| 1 | yt | /discover/yt/watch/```video_id```?access=```access``` | Video ID (String), Access Token (Int) | Channel ID, Channel Name, RSS Feed | 
 
 ## Response
 1. yt
