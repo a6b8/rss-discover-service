@@ -76,7 +76,7 @@ puts ''
 puts 'URL: ' + url
 if res.code.to_s.eql? '200'
     puts 'OK'
-    puts JSON.pretty_generate( request.to_s )
+    puts JSON.pretty_generate( res.body.to_s )
 else
     puts 'Error'
     puts res.code.to_s
