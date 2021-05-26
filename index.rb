@@ -4,6 +4,7 @@ Bundler.require
 
 require 'net/http'
 require 'sinatra/base'
+require 'active_support/core_ext/hash/indifferent_access'
 
 require './discover/youtube/watch.rb'
 
