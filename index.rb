@@ -20,6 +20,8 @@ class Discover < Sinatra::Base
     }
 
     get '/discover/youtube/watch/:id' do
+        puts secrets.to_s
+        puts params.to_s
         access = access_check( secrets[:multiplicator], params[ 'secret' ], secrets[:debug] )
         if access
             video = youtube_video_to_channel( params[ 'id' ], secrets[:debug] )
