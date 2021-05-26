@@ -23,7 +23,7 @@ class Discover < Sinatra::Base
             content_type :json
             video.to_json
         else
-            "Access Denied! #{params[ 'secret' ]}"
+            erb :error, :locals => { :secret => params[ 'secret' ] }
         end
     end
 
