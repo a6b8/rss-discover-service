@@ -28,8 +28,7 @@ class Discover < Sinatra::Base
     end
 
     get '/*' do
-        name = "Swapnesh"
-        erb :hello, :locals => {:name => name}
+        erb :hello
     end
 end
 
