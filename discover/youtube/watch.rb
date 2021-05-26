@@ -73,9 +73,11 @@ def youtube_video_to_channel( video_id, debug )
   url += sources[:embed]
   url += item[:video][:id]
 
+  debug ? print( 'A' ) : ''
   html = download_html( url, debug )
+  debug ? print( 'B' ) : ''
   data = parse_params( html )
-  
+  debug ? print( 'C' ) : ''
   
   keys = [
     :PLAYER_VARS,
@@ -92,10 +94,12 @@ def youtube_video_to_channel( video_id, debug )
   ]
   
   item[:channel][:id] = parse_channel_id( data, keys )
-  
+  debug ? print( 'D' ) : ''
+
   if !item[:channel][:id].nil?
     puts feed = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + item[:channel][:id]
     xml = download_xml( feed, debug )
+    debug ? print( 'E' ) : ''
     item[:channel][:name] = xml.at( 'feed' ).css( 'title' )[ 0 ].text
   end
 
