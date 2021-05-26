@@ -20,14 +20,17 @@ class Discover < Sinatra::Base
         access = access_check( secrets[:multiplicator], params[ 'access' ], secrets[:debug] )
         if access
             video = yt_video_to_channel( params[ 'video_id' ], secrets[:debug] )
+            status 200
             content_type :json
             JSON.pretty_generate( video )
         else
+            status 404
             erb :error, :locals => { :secret => params[ 'secret' ] }
         end
     end
 
     get '/*' do
+        status 404
         erb :hello
     end
 end
