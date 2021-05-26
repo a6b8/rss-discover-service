@@ -2,7 +2,7 @@
 
 # RSS Discover Service
 
-## Quickstart
+## Quickstart (Heroku)
 1. Create your Heroku Instance<br>
 <a href="https://heroku.com/deploy?template=https://github.com/a6b8/curlai--discover-service">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
@@ -18,9 +18,9 @@
    - [x] Set Multiplicator<br>
 
 ## Routes
-| Nr | Type | Route | Expect | Return |
-| --- | --- | --- |  --- |  --- | 
-| 1 | yt | /discover/yt/watch | Video ID | Channel ID, RSS Feed | 
+| Nr | Type | Route | Parameter | Structure | Return |
+| --- | --- | --- |  --- | --- | --- | 
+| 1 | yt | /discover/yt/watch | Video ID (String), Access Token (Int) | https://api.example.com/discover/yt/watch/[Video_ID]?access=[Access] | Channel ID, Channel Name, RSS Feed | 
 
 ## Response
 
