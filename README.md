@@ -49,6 +49,6 @@ Find RSS by Video URL
 | **Date:** | =NOW()  |
 | **Date Copy:** | Copy Date: Right Mouse Click -> Values Only]  |
 | **API:** | https://api.example.com |
-| **ROUTE** | /discover/yt/watch |  |   |   |   |   | 
+| **ROUTE** | /discover/yt/watch/ |  |   |   |   |   | 
 | NR | VIDEO URL | REQUEST | VIDEO ID |	CHANNEL ID | CHANNEL NAME | RSS URL |
 | =IF(A6="NR",1,A6+1) | [YOUR VIDEO URL] | =CONCATENATE( $B$4, $B$5, INDEX( SPLIT( B7,"?v=","" ), 2 ),"?","access=", FLOOR( ( YEAR( $B$3 ) - MONTH( $B$3 ) + DAY( $B$3 ) ) * $B$1 ) ) | =INDEX( ImportJSON( C7 ), 2 ) | | | | |
