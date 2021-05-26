@@ -7,7 +7,7 @@
 </a><br>
 1. Setup Enironment Variables<br>
    ```MULTIPLICATOR : [Int]```<br>
-   ```DEBUG : [boolean]``` 
+   ```DEBUG : [boolean]```<br>
 2. ```curl``` for an result
 
 
