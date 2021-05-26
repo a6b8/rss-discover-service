@@ -40,7 +40,7 @@
 ## Spreadsheet usage
 Find RSS by Video URL
 
-**1. Settings**
+**1. Copy into Spreadsheet**
 | A | B | C | D | E | F | G |
 |---|---|---|---|---|---|---|
 | **Multiplicator:** | 42  |
@@ -49,4 +49,4 @@ Find RSS by Video URL
 | **API:** | https://api.example.com/discover/yt/watch |
 |  |  |  | 2 | 3 | 4 | 5 | 
 | **NR**  | **URL** | **VIDEO ID**  | **CHANNEL ID**  | **CHANNEL NAME** | **RSS URL** | **VIDEO URL**   |    | 
-| =IF(A7="NR",1,A7+1) | =CONCATENATE($A$4,"/",INDEX( SPLIT( H11,"?v=","" ), 2 ),"?","secret=", FLOOR( (YEAR( $B$3 ) - MONTH( $B$3 ) + DAY( $B$3 ) ) * $B$1 ) ) | =INDEX(ImportJSON(B7),2) |   |   |    |    | 
+| =IF(A7="NR",1,A7+1) | =CONCATENATE( $A$4,"/",INDEX( SPLIT( H11,"?v=","" ), 2 ),"?","secret=", FLOOR( ( YEAR( $B$3 ) - MONTH( $B$3 ) + DAY( $B$3 ) ) * $B$1 ) ) | =INDEX( ImportJSON( B7 ), 2 ) |   |   |    |    | 

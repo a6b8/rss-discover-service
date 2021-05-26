@@ -73,7 +73,7 @@ def yt_video_to_channel( video_id, debug )
   [ 121, 111, 117, 116, 117, 98, 101 ].each { | char | src << char.chr }
 
   sources = { 
-    embed: "https://www.#{src}.com/embed/"
+    embed: "https://www.#{src}.com/embed/",
     rss: "https://www.#{src}.com/feeds/videos.xml?channel_id="
   }
 
