@@ -8,10 +8,12 @@
 <a href="https://heroku.com/deploy?template=https://github.com/a6b8/curlai--discover-service">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a><br>
+
 1. Setup Enironment Variables<br>
-```MULTIPLICATOR : [Int]```<br>
-```DEBUG : [boolean]```<br>
-2. ```curl``` for an result
+  ```MULTIPLICATOR : [Int]```<br>
+  ```DEBUG : [boolean]```<br>
+  
+1. ```curl``` for an result
 
 
 ## Routes
