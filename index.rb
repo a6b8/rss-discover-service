@@ -10,26 +10,24 @@ require './discover/youtube/watch.rb'
 
 class Discover < Sinatra::Base
     def set_secrets()
-        obj = {}
+        result = {}
 
-        for i in 0 ... ARGV.length
-            key = ARGV[ i ].split( "=" )[ 0 ]
-            value = ARGV[ i ].split( "=" )[ 1 ].gsub( '"','' )
+        keys = [
+            'DEBUG',
+            'MULTIPLICATOR'
+        ]
 
-            if key.include? "_FILE"
-                value = File.read( value )
-                key = key[ 0, key.length - 5 ]
-            end
-
+        keys.each do | key |
             case key
                 when "DEBUG"
-                    obj[:debug] = JSON.parse( value )
+                    result[:debug] = JSON.parse( ENV[ key ] )
                 when "MULTIPLICATOR"
-                    obj[:multiplicator] = value.to_i
+                    result[:multiplicator] = ENV[ key ].to_i
                 else
             end
         end
-        return obj
+
+        return result
     end
 
 
@@ -54,19 +52,23 @@ class Discover < Sinatra::Base
     set :bind, '0.0.0.0'
     set :port, '80'
 
-    # secrets = set_secrets()
+    secrets = set_secrets()
     secrets = {
         debug: true
     }
 
     get '/discover/youtube/watch/:id' do
-        #access = access_check( secrets[:multiplicator], params[ 'secret' ], secrets[:debug] )
-        if true #access
+        access = access_check( secrets[:multiplicator], params[ 'secret' ], secrets[:debug] )
+        if access
             video = youtube_video_to_channel( params[ 'id' ], secrets[:debug] )
             content_type :json
             video.to_json
         else
             "Access Denied! #{params[ 'secret' ]}"
         end
+    end
+
+    get '/*' do
+        'Welcome'
     end
 end
