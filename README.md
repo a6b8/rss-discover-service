@@ -22,7 +22,7 @@
 | --- | --- | --- |  --- | --- | 
 | 1 | yt | /discover/yt/watch/```video_id```?access=```access``` | Video ID (String), Access Token (Int) | Channel ID, Channel Name, RSS Feed | 
 
-## Response
+**Response**
 1. yt
 ```json
 {
@@ -39,7 +39,7 @@
 }
 ```
 
-## Spreadsheet usage
+## Spreadsheet Helper
 Find RSS by Video URL
 
 **1. Copy into Spreadsheet**

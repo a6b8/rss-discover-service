@@ -21,10 +21,11 @@ puts ''
 puts 'SERVER (Example: https://api.example.com)'
 print '>>  '
 input = gets.chomp
+
 if input.eql? ''
     exit
 else
-    hash[:server][:used] = input.strip!
+    hash[:server][:used] = input.strip
 end
 
 puts 'VIDEO ID (Default: ' + hash[:video_id][:default] + ')'
@@ -55,6 +56,7 @@ m = Time.now.month.to_i
 d = Time.now.day.to_i
 access = ( ( y - m + d ) * hash[:multiplicator][:used] ).floor
 
+puts hash
 url = ''
 url << hash[:server][:used]
 url << '/'
