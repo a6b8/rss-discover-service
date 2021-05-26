@@ -107,8 +107,8 @@ def yt_video_to_channel( video_id, debug )
   debug ? print( 'D' ) : ''
 
   if !item[:channel][:id].nil?
-    puts feed = sources[:rss] + item[:channel][:id]
-    xml = download_xml( feed, debug )
+    item[:rss][:url] = sources[:rss] + item[:channel][:id]
+    xml = download_xml( item[:rss][:url], debug )
     debug ? print( 'E' ) : ''
     item[:channel][:name] = xml.at( 'feed' ).css( 'title' )[ 0 ].text
   end
