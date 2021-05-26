@@ -9,10 +9,10 @@
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a><br>
 
-1. Setup Enironment Variables<br>
+1. Setup Environment Variables<br>
   ```MULTIPLICATOR : [Int]```<br>
   ```DEBUG : [boolean]```<br>
-  
+
 1. ```curl``` for an result
 
 

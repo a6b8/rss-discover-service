@@ -17,7 +17,7 @@ class Discover < Sinatra::Base
 
     secrets = set_secrets()
     get '/discover/yt/watch/:video_id' do
-        access = access_check( secrets[:multiplicator], params[ 'secret' ], secrets[:debug] )
+        access = access_check( secrets[:multiplicator], params[ 'access' ], secrets[:debug] )
         if access
             video = yt_video_to_channel( params[ 'video_id' ], secrets[:debug] )
             content_type :json
