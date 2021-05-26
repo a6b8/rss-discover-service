@@ -2,9 +2,15 @@ GEM
   remote: https://rubygems.org/
   specs:
     json (2.5.1)
+    mini_portile2 (2.5.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nokogiri (1.11.5)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogiri (1.11.5-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.11.5-x86_64-linux)
       racc (~> 1.4)
     racc (1.5.2)
     rack (2.2.3)
@@ -19,7 +25,9 @@ GEM
     tilt (2.0.10)
 
 PLATFORMS
+  ruby
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   json
