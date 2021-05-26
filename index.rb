@@ -13,7 +13,7 @@ require './discover/access/access.rb'
 class Discover < Sinatra::Base
     set :bind, '0.0.0.0'
     set :port, '80'
-    set :views, settings.root + '/templates'
+    set :views, './templates'
 
     secrets = set_secrets()
     get '/discover/youtube/watch/:id' do
