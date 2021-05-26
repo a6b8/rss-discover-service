@@ -1,5 +1,10 @@
 # curlai--discover-service
 
+<a href="https://github.com/a6b8/curlai--discover-service?env[MULTIPLICATOR]=42">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+
+
 ## docker-compose
 
 ```yml
