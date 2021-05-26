@@ -99,6 +99,5 @@ def youtube_video_to_channel( video_id, debug )
     item[:channel][:name] = xml.at( 'feed' ).css( 'title' )[ 0 ].text
   end
 
-  
   return item
 end
