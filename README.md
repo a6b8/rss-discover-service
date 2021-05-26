@@ -1,6 +1,5 @@
 <img src="./assets/logo.png" width="200px">
 
-
 # RSS Discover Service
 
 ## Quickstart
@@ -13,16 +12,15 @@
   ```MULTIPLICATOR : [Int]```<br>
   ```DEBUG : [boolean]```<br>
 
-1. ```curl``` for an result
-
+2. Execute command in terminal: ```ruby test.rb```<br>
+   [x] Set Server<br>
+   [x] Set Video Id<br>
+   [x] Set Multiplicator<br>
 
 ## Routes
 | Nr | Type | Route | Expect | Return |
 | --- | --- | --- |  --- |  --- | 
 | 1 | yt | /discover/yt/watch | Video ID | Channel ID, RSS Feed | 
-
-## Access
-
 
 ## Response
 
