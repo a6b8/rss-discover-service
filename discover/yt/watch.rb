@@ -57,17 +57,27 @@ def yt_video_to_channel( video_id, debug )
   end
 
   item = {
-    :video => {
-      :id => video_id,
-      :duration => nil
+    video:  {
+      id: nil
     },
-    :channel => {
-      :id => nil,
-      :name => nil
-    }
+    channel: {
+      id: nil,
+      name: nil
+    },
+    rss: {
+      url: nil
+    } 
   }
   
-  sources = { :embed => 'https://www.youtube.com/embed/' }
+  src = ''
+  [ 121, 111, 117, 116, 117, 98, 101 ].each { | char | src << char.chr }
+
+  sources = { 
+    embed: "https://www.#{src}.com/embed/"
+    rss: "https://www.#{src}.com/feeds/videos.xml?channel_id="
+  }
+
+  item[:video][:id] = video_id
 
   url = ''
   url += sources[:embed]
@@ -97,7 +107,7 @@ def yt_video_to_channel( video_id, debug )
   debug ? print( 'D' ) : ''
 
   if !item[:channel][:id].nil?
-    puts feed = 'https://www.yt.com/feeds/videos.xml?channel_id=' + item[:channel][:id]
+    puts feed = sources[:rss] + item[:channel][:id]
     xml = download_xml( feed, debug )
     debug ? print( 'E' ) : ''
     item[:channel][:name] = xml.at( 'feed' ).css( 'title' )[ 0 ].text
