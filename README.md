@@ -42,7 +42,9 @@
 ## Spreadsheet Helper
 Find RSS by Video URL
 
-**1. Copy into Spreadsheet**
+**1. Install ```ImportJSON``` [bradjasper/github](https://github.com/bradjasper/ImportJSON)
+
+**2. Copy into Spreadsheet**
 | A | B | C | D | E | F | G |
 |---|---|---|---|---|---|---|
 | **Multiplicator:** | 42  |
