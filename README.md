@@ -39,7 +39,7 @@
 }
 ```
 
-## Spreadsheet Helper
+## Use Service in Spreadsheets
 Find RSS by Video URL
 
 **1. Install ```ImportJSON``` [bradjasper/github](https://github.com/bradjasper/ImportJSON)**
